@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>tAni demo</title>
+        <link rel="stylesheet" href="../lib/text_animation.css">
+        <script src="../lib/text_animation.js"></script>
+    </head>
+    <body>
+        <main>
+            <p id="text" class="text-animation">This is text animation!</p>
+            <p id="text1" class="text-animation">This is text animation!</p>
+            <script>
+             window.onload = function(){
+                 var textAnimation = new tAni({
+                     id    : 'text',
+                     speed : 100,
+                     delay : 400,
+                     dir   : 'top',
+                     ran   : true
+                 });
+
+                 var textAnimation1 = new tAni({
+                     id    : 'text1',
+                     speed : 100,
+                     delay : 400,
+                     dir   : 'top',
+                     ran   : false
+                 });
+             }
+            </script>
+        </main>
+    </body>
+</html>
