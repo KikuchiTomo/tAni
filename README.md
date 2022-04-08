@@ -1,21 +1,23 @@
 # tAni
 
-## 概要
-テキストアニメーションを行うスクリプトです。  
-2020/03/15現在で Chorme / FireFox / Opera / Safariの最新版に対応しています。  
+## TLDR
+This library animates text and works on web browser (Chrome / FireFox / Opera / Safari)
+This repository was created for my study.
 
-## 使用方法
+## Usage
+### Include
+To use it, you must add the following code within your html header tag.
 
-使用したいhtmlの`head`タグ内に  
 ```html
 <link rel="stylesheet" href="lib/text_animation.css">
 <script src="lib/text_animation.js"></script>
 ```
-と記述します。  
-次に使用したい文字列のみをもつタグのClassに`.text-animation`を指定しその要素の直後または  
-`window.onload`イベント時にコンストラクタで対象の要素のidを指定します。  
-そのほかにも、出現方向(ランダムあり/なし)や表示速度、出現のタイミングを指定できます。  
-いかに例を示します。
+
+### Set Animation
+Add `.text-animation` to the class of the parent element closest to the text to be animated.  
+
+Finally, set up the animation. After all elements have been loaded (`window.onload`), an instance of tAni must be created.
+
 ```html
 <p id="title" class="text-animation">Hello World!</p>
 <script>
@@ -30,10 +32,12 @@ window.onload = function(){
 }
 </script>
 ```
-  
-`id`で対象要素のidを指定、`speed`で表示スピード、`delay`で出現タイミング、`dir`で出現方向、`ran`で出現方向のランダム有無を設定できます。  
-`speed`と`delay`はミリ秒で指定します。また`ran`を`true`に設定した場合、`dir`は無効になります。
+The constructor of tAni has several configuration items that can be set: id of the element to be animated, animation speed, animation delay, animation direction, and random animation direction.
 
-## サンプル
-小規模なのでdemoページはありません。  
-sampleディレクトリの`index.html`にサンプルがあります。
+If you set `ran`, it will override the `dir` setting and will not be used.
+
+All time-related setting values are in milliseconds.
+
+## Sample
+
+There is no demo page. Samples can be found in `index.html` in the sample directory.
